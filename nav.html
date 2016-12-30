@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Animated Header</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500' rel='stylesheet'>
+	<style>
+/* ================================
+	Page Styles
+	================================ */
+	body {
+		background-color: #edeff0;
+	}
+	ul li {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+/* ================================
+	Main Nav
+	================================ */
+	.navbar-flex a {
+		background-color: #3f8abf;
+		color: white;
+	}
+	.navbar-flex li {
+		margin-top: 15px;
+	}
+	.navbar-flex a {
+		display: block;
+		text-align: center;
+		padding: 8px 15px;
+		border-radius: 5px;
+		position: relative;
+		overflow: hidden;
+	}
+	.navbar-flex a::before {
+		font-family: 'FontAwesome';
+		font-size: 1.5em;
+		color: white;
+		content: attr(data-icon);
+		position: absolute;
+		top: 5px;
+		left: -30%;
+		transition: 0.5s;
+	}
+	.navbar-flex a:hover::before {
+		left: 10%;
+	}
+	.navbar-flex a:last-child {
+		margin-right: 50px;
+	}
+/* ================================
+ 	Logos
+ 	================================ */
+ 	.big-brand {
+ 		background-color: transparent;
+ 		color:black;
+ 		font-size: 3em;
+ 		font-weight:700;
+ 		text-align: center;
+ 		text-transform: uppercase;
+ 		margin-left: 50px;
+ 	}
+ 	.small-brand a{
+ 		width: 200px;
+ 		color:black;
+ 		background-color: #f0d53d;
+ 		width:100%;
+ 		text-transform: uppercase;
+ 		font-size: 1.5em;
+ 	}
+/* ================================
+	Media Queries
+	================================ */
+	@media (min-width: 768px) {
+		.navbar-flex {
+			margin-top: 10px;
+			display: -webkit-flex;
+			display: flex;
+			height: 100%;
+		}
+		.navbar-flex li {
+			margin: 0 8px;
+			-webkit-align-self: center;
+			align-self: center;
+			-webkit-flex-grow: 1;
+			flex-grow: 1;
+			transition: 0.5s;
+		}
+		.navbar-flex li:hover {
+			flex-grow: 2;
+		}
+		.navbar-flex a:last-child {
+			margin-right: 0;
+		}
+	}
+	
+</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#flexible-navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="big-brand visible-xs" href="#">My Brand</a> </div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+				<div class="collapse navbar-collapse" id="flexible-navbar">
+					<ul class="navbar-flex">
+						<li class="small-brand hidden-xs"><a href="#">My Brand</a></li>
+						<li> <a href="#" data-icon="&#xf0f4;">About</a> </li>
+						<li> <a href="#" data-icon="&#xf0b1;">Portfolio</a> </li>
+						<li> <a href="#" data-icon="&#xf02d;">Blog</a> </li>
+						<li> <a href="#" data-icon="&#xf0e0;">Contact</a> </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</body>
+	</html>
